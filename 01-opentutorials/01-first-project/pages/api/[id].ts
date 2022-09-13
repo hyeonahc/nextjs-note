@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-// /api/hello로 접근했을때
+// /api/[id]로 접근했을때
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
@@ -12,5 +12,5 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  res.status(200).json({ id: req.query.id })
 }
